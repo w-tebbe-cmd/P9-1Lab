@@ -6,20 +6,26 @@ Date: 10/222/2026
 */
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int countVowel(string str);
 
-int main() {
+int main(void) {
 
-	cout << countVowel("AEIOUaeiou") << endl;
-	cout << countVowel("This is a test for SHOUTING!") << endl;
-	cout << countVowel("qwertyuiopasdfghjklzxcvbnm") << endl;
-	cout << countVowel("shy myrrh") << endl;
-	cout << countVowel("\n") << endl;
-	cout << countVowel("AAAAAAya") << endl;
+	string input;
 
+	while (true) {
+
+		cout << "Enter a string or Q to quit: ";
+		getline(cin, input);
+
+		if (input == "Q") break;
+		
+		cout << countVowel(input) << endl;
+
+	}
 }
 
 int countVowel(string str) {
