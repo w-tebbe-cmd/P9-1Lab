@@ -9,16 +9,31 @@ Date: 10/222/2026
 
 using namespace std;
 
-int countCharacter(string str);
+int countVowel(string str);
 
 int main() {
 
-	cout << countCharacter("Hello, world!") << endl;
-	cout << countCharacter("a b c") << endl;
-	cout << countCharacter("") << endl;
-	cout << countCharacter("Hi bro");
+	cout << countVowel("AEIOUaeiou") << endl;
+	cout << countVowel("This is a test for SHOUTING!") << endl;
+	cout << countVowel("qwertyuiopasdfghjklzxcvbnm") << endl;
+	cout << countVowel("shy myrrh") << endl;
+	cout << countVowel("\n") << endl;
+	cout << countVowel("AAAAAAya") << endl;
 
 }
-int countCharacter(string str) {
-	return str.length();
+
+int countVowel(string str) {
+
+	int length = str.length();
+	int vowels = 0;
+	for (int i = 0; length > i; i++) {
+		char letter = str[i];
+
+		if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u' ||
+			letter == 'A' || letter == 'E' || letter == 'I' || letter == 'O' || letter == 'U') {
+			vowels++;
+		}
+
+	}
+	return vowels;
 }
